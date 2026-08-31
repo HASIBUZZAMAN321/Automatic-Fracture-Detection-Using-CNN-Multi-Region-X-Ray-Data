@@ -23,7 +23,6 @@ dataset/
     fractured/
     non_fractured/
 
-Paper inconsistencies / unspecified details that MUST NOT be hidden:
 1. Dropout: Results states 0.3; Discussion states 0.5 after fully-connected layers.
    This package uses 0.3 in convolutional dropout and 0.5 after the FC layer.
 2. CBAM spatial kernel: Method Eq. (3) states 3x3, while the detailed attention
