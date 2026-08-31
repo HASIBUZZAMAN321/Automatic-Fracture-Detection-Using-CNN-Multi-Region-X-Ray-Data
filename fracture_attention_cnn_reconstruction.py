@@ -1,5 +1,4 @@
 """
-Paper-faithful reconstruction (not the authors' original source code)
 
 Paper:
 "Automatic Fracture Detection Convolutional Neural Network with Multiple
@@ -19,7 +18,6 @@ dataset/
         fractured/
         non_fractured/
 
-The paper reports:
 - Input: 128 x 128 x 3
 - Binary fracture classification
 - Convolution filters progressing through 32, 64, 128, 256
@@ -88,7 +86,6 @@ print("Class names:", class_names)
 
 AUTOTUNE = tf.data.AUTOTUNE
 
-# Paper mentions preprocessing/geometric transforms/scaling/rotation.
 data_augmentation = tf.keras.Sequential(
     [
         layers.RandomFlip("horizontal"),
@@ -169,7 +166,7 @@ def channel_attention(x, reduction=16, name="ca"):
 
 # ============================================================
 # 5. CBAM: Spatial Attention
-# Paper describes average + max pooling across channels,
+
 # concatenation, 7x7 convolution, sigmoid.
 # ============================================================
 def spatial_attention(x, name="sa"):
@@ -206,7 +203,7 @@ def cbam_block(x, reduction=16, name="cbam"):
 
 # ============================================================
 # 6. Residual convolutional attention block
-# Figure 3 of the paper shows residual/skip connections.
+# Figure 3 residual/skip connections.
 # ============================================================
 def residual_attention_block(x, filters, use_se=True, use_cbam=True, name="block"):
     shortcut = x
