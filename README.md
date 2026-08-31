@@ -1,4 +1,5 @@
 # Reproduction package for the Life 2025 fracture-detection paper
+This code might not work properly as a lot of code has been changed while working. 
 
 Files
 - model.py: proposed SE + CBAM + spatial-attention CNN.
